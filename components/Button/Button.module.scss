@@ -1,0 +1,43 @@
+@import '../../styles/variables';
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  &.primary {
+    color: $white;
+    background-color: $primary;
+    svg {
+      fill: $white;
+    }
+    &:hover {
+      background-color: $primaryHover;
+    }
+  }
+  &.transparent {
+    color: $black;
+    background-color: none;
+    border: 1px solid $grayLight;
+    &:hover {
+      background-color: $primaryHover;
+      color: $white;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+  &.down {
+    transform: rotate(90deg);
+  }
+}

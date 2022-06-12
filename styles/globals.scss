@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,regular,500,700,900);
+@import 'variables';
+html,
+body {
+  color: $black;
+  background-color: $background;
+  font-family: $fontFamily;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

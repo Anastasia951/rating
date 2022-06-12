@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+.tag {
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 20px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.medium {
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+.large {
+  padding: 5px 12px;
+  font-size: 0.875rem;
+}
+.tranparent {
+  border: 1px solid $grayLight;
+}
+.red {
+  color: $white;
+  background-color: #de0000;
+  font-weight: bold;
+}
+.gray {
+  color: $white;
+  background-color: #b3c0d9;
+  font-weight: bold;
+}
+.green {
+  color: $green;
+  background-color: $greenLight;
+  font-weight: bold;
+}
+.primary {
+  border: 1px solid $primary;
+  background: none;
+  color: $primary;
+}
