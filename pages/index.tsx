@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 import { Button, Paragraph, Title, Tag, Rating } from '../components'
+import { withLayout } from '../layouts/Layout'
 
 const Home: NextPage = () => {
   const [counter, setCounter] = useState<number>(0)
@@ -25,4 +26,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default withLayout(Home)
