@@ -1,1 +1,12 @@
 @import '../../styles/variables.scss';
+
+.docs {
+  font: inherit;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  a {
+    font-family: $fontFamily;
+  }
+}

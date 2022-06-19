@@ -1,1 +1,50 @@
-@import '../../styles/variables.scss';
+@import '../styles/variables.scss';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 230px minmax(320px, 1200px) 1fr;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    '. header header .'
+    '. sidebar body .'
+    'footer footer footer footer';
+}
+.footer {
+  grid-area: footer;
+  background-color: $primary;
+  color: $white;
+  padding: 25px 32px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(auto, 1fr) minmax(auto, 600px);
+}
+.header {
+  grid-area: header;
+  display: none;
+}
+.body {
+  grid-area: body;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: block;
+  }
+  .sidebar {
+    display: none;
+  }
+  .wrapper {
+    grid-template-areas:
+      'header'
+      'body'
+      'footer';
+    grid-template-columns: minmax(320px, 1fr);
+  }
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}

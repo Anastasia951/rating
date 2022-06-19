@@ -4,16 +4,20 @@ html,
 body {
   color: $black;
   background-color: $background;
-  font-family: $fontFamily;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-family: $fontFamily;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: $fontFamily;
+}
+ul {
+  list-style: none;
 }
