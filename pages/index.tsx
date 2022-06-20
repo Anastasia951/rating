@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import { useState } from 'react'
 import { Button, Paragraph, Title, Tag, Rating } from '../components'
 import { withLayout } from '../layouts/Layout'
+import axios from 'axios'
+import { IMenuItem } from '../types/menu-interface'
 
-const Home: NextPage = () => {
+const Home = ({ menu, firstCategory }: IHomeProps): JSX.Element => {
   const [counter, setCounter] = useState<number>(0)
   return (
     <>
@@ -27,3 +29,22 @@ const Home: NextPage = () => {
 }
 
 export default withLayout(Home)
+
+export const getStaticProps: GetStaticProps = async () => {
+  const firstCategory = 0
+  const { data: menu } = await axios.post<IMenuItem[]>(
+    process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
+    { firstCategory }
+  )
+  return {
+    props: {
+      menu,
+      firstCategory,
+    },
+  }
+}
+
+interface IHomeProps extends Record<string, unknown> {
+  menu: IMenuItem[]
+  firstCategory: number
+}
